@@ -14,9 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
-//import java.util.TreeMap;
-//import java.util.Iterator;
-//import java.util.Set;
+
 
 
 public class Banking {
@@ -60,24 +58,6 @@ public class Banking {
     //special method
     static void displayMenu(Scanner scanner, BankAccount myAccount, Map<String, BankAccount> accounts ){
         //input
-        //System.out.println("-----------------------------------------------");
-        //System.out.println("Welcome to banking system");
-        //System.out.println("Enter your Username: ");
-        //String user = scanner.nextLine();
-        //System.out.println("Enter your Password: ");
-        //String password= scanner.nextLine();
-        //myAccount.printBalance();
-
-        /*authenticating username and password
-        if(!authenticate(user, password, accounts)){
-            System.out.println("Invalid username or password");
-            return;
-        }*/
-
-        //Storing userdata
-        //Map<String, Double> map = new TreeMap();
-        //map.put(user, myAccount.balance);
-
 
         System.out.println("Choose the service: ");
         System.out.println("1. Deposit ");
@@ -157,8 +137,6 @@ public class Banking {
             writer.write(data);
             writer.newLine();
 
-            //fileOutputStream = new FileOutputStream( "C:\\Users\\Anjanee Wijewardana\\Documents\\Java\\Accenture Bootcamp\\SEF_-_Participants_Workspace\\SEF - Participants Workspace\\progress\\src\\Banking\\BankData.csv", true);
-            //fileOutputStream.write(data.getBytes());
 
         } catch (IOException e){
             e.printStackTrace();

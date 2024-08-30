@@ -12,8 +12,6 @@ public class BankAccount {
     String user;
     String password;
     double balance;
-    //int service;
-    //double recipientBalance;
 
     public BankAccount(String user, String password, double initialBalance){
         this.user = user;
