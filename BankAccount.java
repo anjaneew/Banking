@@ -1,8 +1,5 @@
 package Banking;
 
-import java.util.Map;
-import java.util.TreeMap;
-
 /**
  * @author : Anjanee S. Wijewardana
  *
@@ -12,29 +9,53 @@ import java.util.TreeMap;
 
 public class BankAccount {
 
-    String User;
-    String Password;
+    String user;
+    String password;
     double balance;
-    int service;
+    //int service;
+    //double recipientBalance;
 
-    public BankAccount(double balance){
-        this.balance = balance;
+    public BankAccount(String user, String password, double initialBalance){
+        this.user = user;
+        this.password = password;
+        this.balance = initialBalance;
+
     }
 
+    public String getUser() {
+        return user;
+    }
 
+    public String getPassword() {
+        return password;
+    }
 
-    //use switch to select which action?
+    public double getBalance() {
+        return balance;
+    }
 
     public void deposit(double depositAmount){
         balance += depositAmount;
     }
 
     public void withdraw(double withdrawAmount){
-        balance -= withdrawAmount;
+        if (balance >= withdrawAmount){
+            balance -= withdrawAmount;
+        } else {
+            System.out.println("Insufficient balance");
+        }
     }
 
     //ADD TRANSFER
     //special method to transfer money from one account to another
+    public void transfer(double transferAmount, BankAccount recipient){
+        if (balance >= transferAmount){
+            this.balance -= transferAmount;
+            recipient.deposit(transferAmount);
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
 
 
     public void printBalance(){
