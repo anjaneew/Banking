@@ -1,5 +1,3 @@
-package Banking;
-
 /**
  * @author : Anjanee S. Wijewardana
  *
@@ -7,7 +5,7 @@ package Banking;
 
 
 
-public class BankAccount {
+public class BankAccount{
 
     String user;
     String password;
@@ -33,28 +31,38 @@ public class BankAccount {
     }
 
     public void deposit(double depositAmount){
-        balance += depositAmount;
+        if(depositAmount > 0){
+            balance += depositAmount;
+        } else {
+            throw new IllegalArgumentException("Deposit amount must be greater than zero Euros.");
+        }
     }
 
     public void withdraw(double withdrawAmount){
-        if (balance >= withdrawAmount){
-            balance -= withdrawAmount;
+        if(withdrawAmount > 0){
+            if (balance >= withdrawAmount){
+                balance -= withdrawAmount;
+            } else {
+                throw new IllegalArgumentException("Withdraw amount must be greater than account balance.");
+            }
         } else {
-            System.out.println("Insufficient balance");
+            throw new IllegalArgumentException("Withdraw amount must be greater than zero Euros.");
         }
     }
 
-    //ADD TRANSFER
     //special method to transfer money from one account to another
     public void transfer(double transferAmount, BankAccount recipient){
-        if (balance >= transferAmount){
-            this.balance -= transferAmount;
-            recipient.deposit(transferAmount);
+        if (transferAmount > 0){
+            if (balance >= transferAmount){
+                this.balance -= transferAmount;
+                recipient.deposit(transferAmount);
+            } else {
+                throw new IllegalArgumentException("Transfer amount must be greater than account balance.");
+            }
         } else {
-            System.out.println("Insufficient balance");
+            throw new IllegalArgumentException("Transfer amount must be greater than zero Euros.");
         }
     }
-
 
     public void printBalance(){
         System.out.println("-----------------------------------------------");
