@@ -17,7 +17,8 @@ import java.util.HashMap;
 
 public class Banking {
 
-    static final String FILE_PATH =  "C:\\Users\\Anjanee Wijewardana\\Documents\\Java\\Accenture Bootcamp\\SEF_-_Participants_Workspace\\SEF - Participants Workspace\\progress\\src\\Banking\\BankData.txt";
+    //static final String FILE_PATH =  "C:\\Users\\Anjanee Wijewardana\\Documents\\Java\\Accenture Bootcamp\\SEF_-_Participants_Workspace\\SEF - Participants Workspace\\progress\\src\\Banking\\BankData.txt";
+    static final String FILE_PATH = "C:\\Users\\Anjanee Wijewardana\\IdeaProjects\\untitled\\src\\BankData.txt";
 
     public static void main(String[] args){
         //Scanner object set up

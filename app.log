@@ -1,0 +1,3 @@
+2024-09-03 11:09:08 INFO  BankAccount - The password is 1111
+2024-09-03 11:09:15 INFO  BankAccount - The deposit amount is 50000.0
+2024-09-03 11:09:15 INFO  BankAccount - The current balance is: 64500.0
